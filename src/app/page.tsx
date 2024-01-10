@@ -41,18 +41,7 @@ export default async function Home() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <div className="flex flex-wrap gap-[3rem]">
-        {data.products.map((elem) => (
-          <Cards
-            key={elem.id}
-            title={elem.title}
-            price={elem.price}
-            link={elem.link}
-            discount={elem.discount}
-            image={elem.image}
-          />
-        ))}
-      </div>
+     
     </main>
   );
 }
