@@ -10,7 +10,7 @@ export const MainLayout: React.FC<MainLayoutArgType> = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="my-[2rem]">{children}</main>
       <Footer />
     </>
   );

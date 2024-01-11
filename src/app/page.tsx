@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ResponseProductsData } from "@/pages/api/products";
+import Image from "next/image";
 
 async function getData(): Promise<ResponseProductsData> {
   const res = await fetch("http://localhost:3000/api/products");
@@ -19,29 +20,71 @@ async function getData(): Promise<ResponseProductsData> {
 export default async function Home() {
   const data = await getData();
   // eslint-disable-next-line no-console
-  console.log(data)
+  console.log(data);
   return (
-    <main className="min-h-screen container mx-auto grid gap-[2.5rem]">
-      <Carousel>
-        <Carousel>
-          <CarouselContent>
-            {data.products.map((elem) => (
-              <CarouselItem className={`basis-1/3`} key={elem.id}>
-                <Cards
-                  title={elem.title}
-                  price={elem.price}
-                  link={elem.link}
-                  discount={elem.discount}
-                  image={elem.image}
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+    <main className="min-h-screen grid gap-[2.5rem]">
+      <Carousel className="container mx-auto">
+        <CarouselContent>
+          {data.products.map((elem) => (
+            <CarouselItem key={elem.id}>
+              <Image src="/banner.webp" alt="banner" className="w-full min-h-[300px]" width={100} height={300}/>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-     
+      <Carousel className="container mx-auto">
+        <CarouselContent>
+          {data.products.map((elem) => (
+            <CarouselItem className={`basis-1/5`} key={elem.id}>
+              <Cards
+                title={elem.title}
+                price={elem.price}
+                link={elem.link}
+                discount={elem.discount}
+                image={elem.image}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      <Carousel className="container mx-auto">
+        <CarouselContent>
+          {data.products.map((elem) => (
+            <CarouselItem className={`basis-1/5`} key={elem.id}>
+              <Cards
+                title={elem.title}
+                price={elem.price}
+                link={elem.link}
+                discount={elem.discount}
+                image={elem.image}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      <Carousel className="container mx-auto">
+        <CarouselContent>
+          {data.products.map((elem) => (
+            <CarouselItem className={`basis-1/5`} key={elem.id}>
+              <Cards
+                title={elem.title}
+                price={elem.price}
+                link={elem.link}
+                discount={elem.discount}
+                image={elem.image}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </main>
   );
 }
