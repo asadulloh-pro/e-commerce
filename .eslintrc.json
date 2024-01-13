@@ -9,7 +9,6 @@
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "react-hooks/exhaustive-deps": "off",
-    "no-console": "error",
     "no-debugger": "error",
     "no-duplicate-imports": "error",
     "no-else-return": "error",
