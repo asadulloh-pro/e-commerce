@@ -19,8 +19,6 @@ async function getData(): Promise<ResponseProductsData> {
 
 export default async function Home() {
   const data = await getData();
-  // eslint-disable-next-line no-console
-  console.log(data);
   return (
     <main className="min-h-screen grid gap-[2.5rem]">
       <Carousel className="container mx-auto">

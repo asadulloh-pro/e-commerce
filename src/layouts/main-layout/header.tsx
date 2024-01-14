@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import Login from "@/components/shared/login.component";
 import Link from "next/link";
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
         </Link>
 
         <div>
-          <Button>Login</Button>
+          <Login />
         </div>
       </div>
     </header>
