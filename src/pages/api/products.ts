@@ -109,5 +109,11 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseProductsData>
 ) {
-  res.status(200).json({ products });
+  console.log(req)
+  if(req.method === "GET") {
+    res.status(200).json({ products });
+  }
+
+  res.status(200).json({ products: [] });
+
 }
