@@ -1,5 +1,5 @@
 import CardsComponent from "@/components/shared/cards/cards.component";
-import { ResponseProductsData } from "@/pages/api/products";
+import { ResponseProductsData } from "@/app/api/products";
 
 async function getData(): Promise<ResponseProductsData> {
   const res = await fetch("http://localhost:3000/api/products");

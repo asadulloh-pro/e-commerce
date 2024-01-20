@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ResponseProductsData } from "@/pages/api/products";
+import { ResponseProductsData } from "@/app/api/products";
 import Image from "next/image";
 
 async function getData(): Promise<ResponseProductsData> {
@@ -25,7 +25,13 @@ export default async function Home() {
         <CarouselContent>
           {data.products.map((elem) => (
             <CarouselItem key={elem.id}>
-              <Image src="/banner.webp" alt="banner" className="w-full min-h-[300px]" width={100} height={300}/>
+              <Image
+                src="/banner.webp"
+                alt="banner"
+                className="w-full min-h-[300px]"
+                width={100}
+                height={300}
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
