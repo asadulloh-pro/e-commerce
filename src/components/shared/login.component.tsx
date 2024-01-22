@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useCallback } from "react";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
@@ -15,6 +15,5 @@ const Login = () => {
   }, []);
   return <Button onClick={onLogin}>Login</Button>;
 };
-
 
 export default Login;

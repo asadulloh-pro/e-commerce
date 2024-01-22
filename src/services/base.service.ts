@@ -1,3 +1,3 @@
 export class baseService {
-  baseUrl = "/v1/api/"
+  baseUrl = "/v1/api/";
 }
